@@ -52,7 +52,7 @@ class StudentForm extends React.Component {
             }
             return "A tiempo"
         }
-        if(carnet_regex){
+        if(carnet_regex.test(this.state.carnet)){
             let tarde = parseLateSwitch(this.state.tarde);
             let student = new Student(this.state.carnet, this.state.schedule, tarde);
             this.props.onSave(student);
